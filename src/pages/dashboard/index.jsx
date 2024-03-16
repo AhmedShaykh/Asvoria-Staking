@@ -214,7 +214,7 @@ const DashboardDefault = () => {
 
                 {/* row 2 */}
                 <Grid item xs={12} md={12} lg={12}>
-                    <TimeComponent stakeInfor={stakeInfor} stakeBalance ={stakeBalance} />
+                    <TimeComponent stakeInfor={stakeInfor} stakeBalance={stakeBalance} />
                 </Grid>
                 {/* <Grid item xs={12} md={6} lg={7}>
                     <Box
@@ -287,7 +287,7 @@ const DashboardDefault = () => {
                             <Grid item xs={12} sm={6} sx={{ px: 1, mb: 0.5 }}>
                                 <Button sx={{ ...styles.btn1 }} onClick={handleWithdraw}>Withdraw Stake</Button>
                             </Grid>
-                            
+
                         </Grid>
                     </Box>
                 </Grid>
@@ -313,12 +313,12 @@ const DashboardDefault = () => {
                                     <Stack direction="row" alignItems="center" spacing={1.8}>
                                         <div>
                                             <svg width="50" height="56" viewBox="0 0 50 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M43.7558 10.6359L30.6967 3.25855C30.5971 3.20174 30.4935 3.16522 30.3939 3.11246L24.8161 0L19.371 3.05159C19.23 3.12464 19.0766 3.18145 18.9397 3.25855L5.88056 10.6359C2.25186 12.6852 0 16.5038 0 20.6023C0 20.6023 0.0124412 35.9374 0.0787945 36.5096C0.460326 40.1577 2.59607 43.4649 5.88056 45.3194L13.3121 49.5154L13.3412 49.5316L18.9397 52.6928C18.9812 52.7171 19.0268 52.7293 19.0641 52.7536L24.8161 55.9919L30.5308 52.7699C30.5847 52.7415 30.6428 52.7212 30.6967 52.6887L43.7558 45.3113C47.3804 43.262 49.6364 39.4435 49.6364 35.3449V20.5901C49.6364 16.4916 47.3845 12.673 43.7558 10.6238V10.6359ZM9.08625 16.0696L24.8161 7.18261L40.546 16.0696C42.2007 17.0029 43.2167 18.7316 43.2167 20.5983V24.6806L30.6925 17.6035C30.593 17.5467 30.4893 17.5101 30.3898 17.4574L24.8161 14.3449L19.371 17.3965C19.23 17.4696 19.0766 17.5264 18.9397 17.6035L6.41553 24.6806V20.5983C6.41553 18.7316 7.43571 17.0029 9.08625 16.0696ZM40.5501 39.8817L24.8203 48.7606L9.0904 39.8817C7.43571 38.9484 6.41968 37.2197 6.41968 35.353V34.9473C6.41968 33.0806 7.43986 31.3519 9.0904 30.4186L24.8203 21.5316L40.5501 30.4186C42.2048 31.3519 43.2209 33.0806 43.2209 34.9473V35.353C43.2209 37.2197 42.2007 38.9484 40.5501 39.8817Z" fill="url(#paint0_linear_1074_874)"/>
+                                                <path d="M43.7558 10.6359L30.6967 3.25855C30.5971 3.20174 30.4935 3.16522 30.3939 3.11246L24.8161 0L19.371 3.05159C19.23 3.12464 19.0766 3.18145 18.9397 3.25855L5.88056 10.6359C2.25186 12.6852 0 16.5038 0 20.6023C0 20.6023 0.0124412 35.9374 0.0787945 36.5096C0.460326 40.1577 2.59607 43.4649 5.88056 45.3194L13.3121 49.5154L13.3412 49.5316L18.9397 52.6928C18.9812 52.7171 19.0268 52.7293 19.0641 52.7536L24.8161 55.9919L30.5308 52.7699C30.5847 52.7415 30.6428 52.7212 30.6967 52.6887L43.7558 45.3113C47.3804 43.262 49.6364 39.4435 49.6364 35.3449V20.5901C49.6364 16.4916 47.3845 12.673 43.7558 10.6238V10.6359ZM9.08625 16.0696L24.8161 7.18261L40.546 16.0696C42.2007 17.0029 43.2167 18.7316 43.2167 20.5983V24.6806L30.6925 17.6035C30.593 17.5467 30.4893 17.5101 30.3898 17.4574L24.8161 14.3449L19.371 17.3965C19.23 17.4696 19.0766 17.5264 18.9397 17.6035L6.41553 24.6806V20.5983C6.41553 18.7316 7.43571 17.0029 9.08625 16.0696ZM40.5501 39.8817L24.8203 48.7606L9.0904 39.8817C7.43571 38.9484 6.41968 37.2197 6.41968 35.353V34.9473C6.41968 33.0806 7.43986 31.3519 9.0904 30.4186L24.8203 21.5316L40.5501 30.4186C42.2048 31.3519 43.2209 33.0806 43.2209 34.9473V35.353C43.2209 37.2197 42.2007 38.9484 40.5501 39.8817Z" fill="url(#paint0_linear_1074_874)" />
                                                 <defs>
                                                     <linearGradient id="paint0_linear_1074_874" x1="4.5" y1="10.8555" x2="44.8201" y2="42.4859" gradientUnits="userSpaceOnUse">
-                                                        <stop stop-color="#01FEA8"/>
-                                                        <stop offset="0.510417" stop-color="#46A5FF"/>
-                                                        <stop offset="1" stop-color="#D632FF"/>
+                                                        <stop stop-color="#01FEA8" />
+                                                        <stop offset="0.510417" stop-color="#46A5FF" />
+                                                        <stop offset="1" stop-color="#D632FF" />
                                                     </linearGradient>
                                                 </defs>
                                             </svg>
@@ -327,7 +327,7 @@ const DashboardDefault = () => {
                                             <Stack direction="row" spacing={1.2} alignItems="center">
                                                 <Typography variant="p" sx={{ fontWeight: 700, fontSize: '16px', color: "white" }} >ASVORIA</Typography>
                                                 <div style={{ width: "1px", height: "10px", background: "#C7C8CC" }}></div>
-                                                <Typography variant="p" sx={{ fontWeight: 500, fontSize: '16px', color: "white", opacity: 0.5 }} >ASVORIA Protocol</Typography>
+                                                <Typography variant="p" sx={{ fontWeight: 500, fontSize: '16px', color: "white", opacity: 0.5 }} >ASVORIA TOKEN</Typography>
                                             </Stack>
                                             <Typography variant="p" sx={{ fontWeight: 700, fontSize: '16px', color: "white" }}>$ 0.0012 USD</Typography>
                                         </Stack>
@@ -341,7 +341,7 @@ const DashboardDefault = () => {
             <Toaster
                 position="top-center"
                 reverseOrder={false}
-                toastOptions = {{
+                toastOptions={{
                     style: {
                         background: "#16182D",
                         color: 'white'

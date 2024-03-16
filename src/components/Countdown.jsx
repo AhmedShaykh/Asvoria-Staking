@@ -1,84 +1,84 @@
 import { Box, Stack, Typography, Divider, Paper } from "@mui/material"
-import { styled } from '@mui/material/styles';
+import { styled } from "@mui/material/styles";
 import { useEffect, useState } from "react";
 
 
 const Item = styled(Paper)(({ theme }) => ({
-    backgroundColor: '#e5e5e5',
+    backgroundColor: "#e5e5e5",
     borderRadius: 0,
-    paddingTop: '1.25rem',
-    paddingBottom: '1.25rem',
-    textAlign: 'center',
-    boxShadow: 'none',
-    width: '68px'
+    paddingTop: "1.25rem",
+    paddingBottom: "1.25rem",
+    textAlign: "center",
+    boxShadow: "none",
+    width: "68px"
 }));
 
 const styles = {
     lockPeriod: {
-        textAlign: 'center',
-        fontFamily: 'Space Grotesk',
+        textAlign: "center",
+        fontFamily: "Space Grotesk",
         fontWeight: 400,
-        fontSize: '16px',
-        lineHeight: '20px'
+        fontSize: "16px",
+        lineHeight: "20px"
     },
     timer: {
-        color: 'white',
-        fontFamily: 'Space Grotesk',
+        color: "white",
+        fontFamily: "Space Grotesk",
         fontWeight: 600,
-        fontSize: '32px',
-        lineHeight: '23px'
+        fontSize: "32px",
+        lineHeight: "23px"
 
     },
     timeCat: {
-        color: 'white',
-        lineHeight: '10px',
-        fontSize: '12px',
+        color: "white",
+        lineHeight: "10px",
+        fontSize: "12px",
         mt: 2
     },
     lockAmount: {
-        textAlign: 'center',
-        fontFamily: 'Space Grotesk',
+        textAlign: "center",
+        fontFamily: "Space Grotesk",
         fontWeight: 500,
-        fontSize: '18px',
-        lineHeight: '16px',
-        color: '#000515',
+        fontSize: "18px",
+        lineHeight: "16px",
+        color: "#000515",
         opacity: 0.7,
         mt: 3
     },
     selectBox: {
-        width: '120px',
-        padding: '6px 10px',
-        fontFamily: 'Space Grotesk',
-        fontSize: '16px',
-        background: '#e6e6e6',
-        border: '1px solid #ccc'
+        width: "120px",
+        padding: "6px 10px",
+        fontFamily: "Space Grotesk",
+        fontSize: "16px",
+        background: "#e6e6e6",
+        border: "1px solid #ccc"
     },
     stakeChartvalue: {
-        fontFamily: 'Space Grotesk',
-        fontSize: '24px',
+        fontFamily: "Space Grotesk",
+        fontSize: "24px",
         fontWeight: 700,
-        lineHeight: '30px'
+        lineHeight: "30px"
     },
     txtInput: {
-        border: '1px solid #C7C4C3',
-        width: '100%',
-        fontSize: '16px',
-        fontFamily: 'Space Grotesk',
-        padding: '18px 16px',
-        background: '#e5e5e5',
-        color: '#000515',
+        border: "1px solid #C7C4C3",
+        width: "100%",
+        fontSize: "16px",
+        fontFamily: "Space Grotesk",
+        padding: "18px 16px",
+        background: "#e5e5e5",
+        color: "#000515",
         borderRadius: 0
     },
     btn: {
-        width: '100%',
-        bgcolor: '#F5331E',
-        fontFamily: 'Space Grotesk',
-        fontSize: '16px',
+        width: "100%",
+        bgcolor: "#F5331E",
+        fontFamily: "Space Grotesk",
+        fontSize: "16px",
         borderRadius: 0,
         color: "#fff",
         py: 2,
         px: 2,
-        '&:hover': {
+        "&:hover": {
             bgcolor: "#ff7262"
         }
     }
@@ -115,27 +115,27 @@ const Countdown = ({ deadline }) => {
         <Stack
             direction="row"
             divider={<Divider />}
-            spacing={1.5}
-            sx={{ mt: '16px' }}
-            alignItems='center'
+            spacing={1.3}
+            sx={{ mt: "16px" }}
+            alignItems="center"
         >
             <Item sx={{ bgcolor: "#121212 !important" }}>
-                <Typography variant="h3" sx={styles.timer} >{days < 10 ? "0" + days : isNaN(days) ? '00' : days}</Typography>
+                <Typography variant="h3" sx={styles.timer} >{days < 10 ? "0" + days : isNaN(days) ? "00" : days}</Typography>
                 <Typography variant="h3" sx={styles.timeCat} >Days</Typography>
             </Item>
 
             <Item sx={{ bgcolor: "#121212 !important" }}>
-                <Typography variant="h3" sx={styles.timer} >{hours < 10 ? "0" + hours : isNaN(hours) ? '00' : hours}</Typography>
+                <Typography variant="h3" sx={styles.timer} >{hours < 10 ? "0" + hours : isNaN(hours) ? "00" : hours}</Typography>
                 <Typography variant="h3" sx={styles.timeCat} >Hours</Typography>
             </Item>
 
             <Item sx={{ bgcolor: "#121212 !important" }}>
-                <Typography variant="h3" sx={styles.timer} >{minutes < 10 ? "0" + minutes : isNaN(minutes) ? '00' : minutes}</Typography>
+                <Typography variant="h3" sx={styles.timer} >{minutes < 10 ? "0" + minutes : isNaN(minutes) ? "00" : minutes}</Typography>
                 <Typography variant="h3" sx={styles.timeCat} >Minutes</Typography>
             </Item>
 
             <Item sx={{ bgcolor: "#121212 !important" }}>
-                <Typography variant="h3" sx={styles.timer} >{seconds < 10 ? "0" + seconds : isNaN(seconds) ? '00' : seconds}</Typography>
+                <Typography variant="h3" sx={styles.timer} >{seconds < 10 ? "0" + seconds : isNaN(seconds) ? "00" : seconds}</Typography>
                 <Typography variant="h3" sx={styles.timeCat} >Seconds</Typography>
             </Item>
         </Stack>

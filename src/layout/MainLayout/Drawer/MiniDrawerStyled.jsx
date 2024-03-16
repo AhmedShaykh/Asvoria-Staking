@@ -24,7 +24,8 @@ const closedMixin = (theme) => ({
     overflowX: 'hidden',
     width: 0,
     borderRight: 'none',
-    boxShadow: theme.customShadows.z1
+    boxShadow: theme.customShadows.z1,
+    backgroundColor: "#121212"
 });
 
 // ==============================|| DRAWER - MINI STYLED ||============================== //

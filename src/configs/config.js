@@ -11,4 +11,3 @@ import { PublicKey } from "@solana/web3.js";
 export const STAKE_PROGRAM_PUBKEY = new PublicKey("H9j4ah4FrH1ZcJe2AKPPb5y6fmKneE4Do9rH9onr6CA1");
 
 export const MINT_ADDRESS = new PublicKey("2RLtxbonxzUQurT5byNo48BgmJ8AaziRfVqQS44Hicfb");
-

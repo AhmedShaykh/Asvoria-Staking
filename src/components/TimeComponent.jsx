@@ -6,13 +6,16 @@ import { GlobalContext } from 'context/GlobalContext';
 import Countdown from './Countdown';
 import { useStake } from 'hooks/solanaHooks';
 
-const TimeComponent = ({stakeInfor, stakeBalance}) => {
+const TimeComponent = ({ stakeInfor, stakeBalance }) => {
+
     const daysInWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+
     const { blockchainData } = useContext(GlobalContext)
+
     const [opt, setOpt] = useState(0)
 
     // let symbol = opt < 5 ? "ASVORIA" : "USDT"
-    let symbol = "ASVORIA" 
+    let symbol = "ASVORIA"
     // let decimals = opt < 5 ? 9 : 6
 
     let deadline = new Date().getTime()
@@ -21,13 +24,6 @@ const TimeComponent = ({stakeInfor, stakeBalance}) => {
         deadline = isNaN(deadline) ? 0 : deadline
         console.log(deadline)
     }
-
-
-    // let stakeAmount = blockchainData.userStakes.length > 0 ? (parseInt(blockchainData?.userStakes[opt]?.amount.toString())) : 0
-    // stakeAmount = isNaN(stakeAmount) ? 0 : stakeAmount
-
-    // let rewardsEarned = blockchainData.rewards.length > 0 ? (parseInt(blockchainData?.rewards[opt].toString())) : 0
-    // rewardsEarned = isNaN(rewardsEarned) ? 0 : rewardsEarned
 
     const styles = {
         lockPeriod: {
@@ -107,8 +103,6 @@ const TimeComponent = ({stakeInfor, stakeBalance}) => {
         setOpt(e.target.value)
     }
 
-
-
     return (
         <div>
             <Box
@@ -126,16 +120,8 @@ const TimeComponent = ({stakeInfor, stakeBalance}) => {
                     <Typography
                         sx={{ color: "#01FEA8", fontWeight: 700 }}
                         variant="h4"
-                    >Lock Period</Typography>
-                    {/* <select style={styles.selectBox} onChange={handleChange}>
-                        <optgroup label="ASVORIA">
-                            <option value="0">1 Month</option>
-                            <option value="1">3 Month</option>
-                            <option value="2">6 Month</option>
-                            <option value="3">9 Month</option>
-                            <option value="4">12 Month</option>
-                        </optgroup>
-                    </select> */}
+                    >Lock Period
+                    </Typography>
                 </Stack>
                 <Box
                     sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', pt: 4.5, pb: 3.5, pl: 1, pr: 1, flexDirection: 'column' }}
@@ -144,14 +130,13 @@ const TimeComponent = ({stakeInfor, stakeBalance}) => {
                         <Typography variant="p" sx={styles.lockPeriod}>{daysInWeek[new Date(deadline).getDay()]}</Typography>
                         <Typography variant="p" sx={styles.lockPeriod}>{new Intl.DateTimeFormat('en-US', { dateStyle: 'full' }).format(new Date(deadline))}</Typography>
                     </Stack>
-                    {/* Countdown */}
+
                     <Countdown deadline={deadline} />
                     <Typography variant="p" sx={styles.lockAmount}>Token Staked: {new Intl.NumberFormat("en-US").format(stakeBalance.toString()) + " " + symbol} </Typography>
-                    {/* <Typography variant="p" sx={{ ...styles.lockAmount, mt: 1.5 }}>Rewards Earned: {0} ASVORIA </Typography> */}
                 </Box>
             </Box>
         </div>
     )
 }
 
-export default TimeComponent
+export default TimeComponent;

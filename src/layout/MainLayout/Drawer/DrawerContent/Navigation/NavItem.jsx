@@ -1,14 +1,14 @@
-import PropTypes from 'prop-types';
-import { forwardRef, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import PropTypes from "prop-types";
+import { forwardRef, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 
 // material-ui
-import { useTheme } from '@mui/material/styles';
-import { Avatar, Chip, ListItemButton, ListItemIcon, ListItemText, Typography } from '@mui/material';
+import { useTheme } from "@mui/material/styles";
+import { Avatar, Chip, ListItemButton, ListItemIcon, ListItemText, Typography } from "@mui/material";
 
 // project import
-import { activeItem } from 'store/reducers/menu';
+import { activeItem } from "store/reducers/menu";
 
 // ==============================|| NAVIGATION - LIST ITEM ||============================== //
 
@@ -18,14 +18,14 @@ const NavItem = ({ item, level }) => {
     const menu = useSelector((state) => state.menu);
     const { drawerOpen, openItem } = menu;
 
-    let itemTarget = '_self';
+    let itemTarget = "_self";
     if (item.target) {
-        itemTarget = '_blank';
+        itemTarget = "_blank";
     }
 
     let listItemProps = { component: forwardRef((props, ref) => <Link ref={ref} {...props} to={item.url} target={itemTarget} />) };
     if (item?.external) {
-        listItemProps = { component: 'a', href: item.url, target: itemTarget };
+        listItemProps = { component: "a", href: item.url, target: itemTarget };
     }
 
     const itemHandler = (id) => {
@@ -34,7 +34,7 @@ const NavItem = ({ item, level }) => {
 
     const Icon = item.icon;
 
-    const itemIcon = item.icon ? <Icon style={{ fontSize: drawerOpen ? '1rem' : '1.25rem' }} /> : false;
+    const itemIcon = item.icon ? <Icon style={{ fontSize: drawerOpen ? "1rem" : "1.25rem" }} /> : false;
 
     const isSelected = openItem.findIndex((id) => id === item.id) > -1;
 
@@ -42,7 +42,7 @@ const NavItem = ({ item, level }) => {
     useEffect(() => {
         const currentIndex = document.location.pathname
             .toString()
-            .split('/')
+            .split("/")
             .findIndex((id) => id === item.id);
         if (currentIndex > -1) {
             dispatch(activeItem({ openItem: [item.id] }));
@@ -50,8 +50,8 @@ const NavItem = ({ item, level }) => {
         // eslint-disable-next-line
     }, []);
 
-    const textColor = 'text.primary';
-    const iconSelectedColor = 'white';
+    const textColor = "text.primary";
+    const iconSelectedColor = "white";
 
     return (
         <ListItemButton
@@ -59,7 +59,7 @@ const NavItem = ({ item, level }) => {
             disabled={item.disabled}
             onClick={() => itemHandler(item.id)}
             selected={isSelected}
-            
+
         >
             {itemIcon && (
                 <ListItemIcon
@@ -70,17 +70,17 @@ const NavItem = ({ item, level }) => {
                             borderRadius: 1.5,
                             width: 36,
                             height: 36,
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            '&:hover': {
-                                bgcolor: 'secondary.lighter'
+                            alignItems: "center",
+                            justifyContent: "center",
+                            "&:hover": {
+                                bgcolor: "#121212"
                             }
                         }),
                         ...(!drawerOpen &&
                             isSelected && {
-                            bgcolor: 'primary.lighter',
-                            '&:hover': {
-                                bgcolor: 'primary.lighter'
+                            bgcolor: "#121212",
+                            "&:hover": {
+                                bgcolor: "#121212"
                             }
                         })
                     }}
